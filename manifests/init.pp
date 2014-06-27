@@ -37,7 +37,7 @@ class selenium(
     $jar_url = $url
   } else {
     $variant = "${path_version}/${jar_name}"
-    $jar_url = "https://selenium-release.storage.googleapis.com/${variant}"
+    $jar_url = "http://selenium-release.storage.googleapis.com/${variant}"
   }
 
   File {
