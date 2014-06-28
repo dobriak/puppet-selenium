@@ -37,7 +37,7 @@ class selenium(
     $jar_url = $url
   } else {
     $variant = "${path_version}/${jar_name}"
-    $jar_url = "http://selenium-release.storage.googleapis.com/${variant}"
+    $jar_url = "https://selenium-release.storage.googleapis.com/${variant}"
   }
 
   File {
@@ -69,6 +69,7 @@ class selenium(
   }
 
   wget::fetch { 'selenium-server-standalone':
+    nocheckcertificate => true,
     source      => $jar_url,
     destination => "${jar_path}/${jar_name}",
     timeout     => $download_timeout,
